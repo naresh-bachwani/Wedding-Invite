@@ -167,6 +167,75 @@ function initParallax() {
 }
 
 
+// ---------- LANTERNS ----------
+function initLanterns() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  const container = document.createElement('div');
+  container.className = 'lantern-container';
+  hero.appendChild(container);
+
+  const lanternCount = 30; // More lanterns for layered depth
+
+  function createLantern() {
+    const lantern = document.createElement('div');
+
+    // Assign size classes for depth
+    const rand = Math.random();
+    let sizeClass = 'lantern--md';
+    let parallax = 0.15;
+
+    if (rand < 0.35) {
+      sizeClass = 'lantern--sm';
+      parallax = 0.08;
+    } else if (rand > 0.88) {
+      sizeClass = 'lantern--lg';
+      parallax = 0.4; // Foregrounds move more
+    }
+
+    lantern.className = `lantern ${sizeClass}`;
+    lantern.dataset.parallax = parallax;
+
+    const flame = document.createElement('div');
+    flame.className = 'lantern-flame';
+    lantern.appendChild(flame);
+
+    resetLantern(lantern);
+    container.appendChild(lantern);
+  }
+
+  function resetLantern(lantern) {
+    const duration = Math.random() * 10 + 20; // Slower float (20-30s)
+    const delay = Math.random() * 30;
+    const left = Math.random() * 100;
+    const sway = (Math.random() - 0.5) * 160;
+    const rotate = (Math.random() - 0.5) * 20;
+
+    lantern.style.left = `${left}%`;
+    lantern.style.setProperty('--duration', `${duration}s`);
+    lantern.style.setProperty('--sway', `${sway}px`);
+    lantern.style.setProperty('--rotate', `${rotate}deg`);
+    lantern.style.animationDelay = `-${delay}s`;
+  }
+
+  for (let i = 0; i < lanternCount; i++) {
+    createLantern();
+  }
+
+  // individual parallax via CSS variables
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+    const lants = container.querySelectorAll('.lantern');
+    lants.forEach(l => {
+      const p = parseFloat(l.dataset.parallax);
+      l.style.setProperty('--parallax-offset', `${scrollY * -p}px`);
+    });
+  });
+}
+
+
+
 // ---------- INIT ----------
 document.addEventListener('DOMContentLoaded', () => {
   initLoader();
@@ -175,4 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMusic();
   initSparkles();
   initParallax();
+  initLanterns();
 });
+
