@@ -949,6 +949,129 @@ a {
 }
 
 /* ================================================================
+   CONTACT
+   ================================================================ */
+.contact {
+  background: var(--teal-deep);
+  text-align: center;
+}
+
+.contact__title {
+  font-family: var(--ff-heading);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+}
+
+.contact__subtitle {
+  font-family: var(--ff-body);
+  font-size: 1rem;
+  color: var(--cream);
+  opacity: 0.8;
+  margin-bottom: 48px;
+  letter-spacing: 1px;
+}
+
+.contact__grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact__group {
+  background: rgba(26, 69, 69, 0.4);
+  padding: 32px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  min-width: 280px;
+  max-width: 450px;
+}
+
+.contact__group:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+}
+
+.contact__group-title {
+  font-family: var(--ff-heading);
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 24px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding-bottom: 12px;
+}
+
+.contact__item {
+  margin-bottom: 24px;
+}
+
+.contact__item:last-child {
+  margin-bottom: 0;
+}
+
+.contact__name {
+  font-family: var(--ff-heading);
+  font-size: 1.15rem;
+  color: var(--cream);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.contact__links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact__link {
+  font-family: var(--ff-body);
+  font-size: 0.9rem;
+  color: var(--gold-light);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact__link:hover {
+  color: #fff;
+  background: rgba(212, 175, 55, 0.2);
+  transform: translateY(-2px);
+  border-color: var(--gold);
+}
+
+.contact__link--whatsapp:hover {
+  background: rgba(37, 211, 102, 0.2);
+  border-color: #25D366;
+  color: #25D366;
+}
+
+.contact__link svg {
+  opacity: 0.9;
+}
+
+
+/* ================================================================
    FOOTER
    ================================================================ */
 .footer {
