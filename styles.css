@@ -738,6 +738,38 @@ a {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
+/* Specific Janeu Styles */
+.event-card__info--janeu {
+  justify-content: flex-start !important;
+  padding-top: 40px !important;
+}
+
+.janeu-of {
+  font-size: 0.85rem !important;
+  font-style: italic;
+  opacity: 0.8;
+  margin: -15px 0 5px 0 !important;
+  text-transform: lowercase;
+  color: var(--gold-light);
+}
+
+.janeu-name {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.5rem, 3vw, 2.2rem) !important;
+  color: #fff;
+  margin-bottom: 5px !important;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.janeu-parents {
+  font-size: 0.85rem !important;
+  opacity: 0.9;
+  letter-spacing: 1px;
+  margin-bottom: 20px !important;
+  color: var(--cream);
+}
+
 
 
 
@@ -925,6 +957,51 @@ a {
 
 .couple__card:hover .couple__card-image img {
   transform: scale(1.1);
+}
+
+/* ================================================================
+   FAMILY
+   ================================================================ */
+.family {
+  text-align: center;
+}
+
+.family__title {
+  font-family: var(--ff-heading);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  text-align: center;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 48px;
+}
+
+.family__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.family__group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.family__names {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--gold-light);
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.family__names:hover {
+  transform: scale(1.05);
+  color: #fff;
 }
 
 /* ================================================================
